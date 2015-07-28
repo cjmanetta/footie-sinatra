@@ -1,0 +1,15 @@
+<article id="<%= challenge.id %>">
+  <h4><a href= '#' id="title<%= challenge.id %>"><%= challenge.title %></a> | <span id="date<%= challenge.id %>"><%= challenge.date %></span></h4>
+  <p><span id="description<%= challenge.id %>"><%= challenge.description %></span></p>
+  <button class="pure-button edit">edit</button>
+  <a href="/activities/<%= challenge.id %>" class="delete"><button class="pure-button">delete</button></a>
+  <form class="pure-form pure-form-stacked" id="edit<%= challenge.id %>" action="/activities/<%= challenge.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <input type="hidden" name="activity_type" value="Challenge">
+      <input type="text" name="title" value="<%= challenge.title %>">
+
+      <input type="text" name="description" value="<%= challenge.description %>">
+      <input type="date" name="date" value="<%= challenge.date %>">
+      <input class="pure-button update" type="submit" value="update">
+  </form>
+</article>

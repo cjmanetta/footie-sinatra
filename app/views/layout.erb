@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+
+  <link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="css/foundation.min.css" />
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600|Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="js/vendor/modernizr.js"></script>
+  <title></title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="pure-menu pure-menu-horizontal">
+        <a href="#" class="pure-menu-heading pure-menu-link">FOOTIE</a>
+        <!-- make a form button so i can have a delete route -->
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <% if logged_in? %>
+            <form action="/sessions/<%= current_user.id %>" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" class="pure-button" value="LOGOUT">
+            </form>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <%= yield %>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+      $(document).foundation();
+  </script>
+  <script src="/js/application.js"></script>
+</body>
+</html>

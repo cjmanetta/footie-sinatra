@@ -1,0 +1,16 @@
+<form class="pure-form" id="new_score" action="/scores" method="post">
+  <select id="challenge_select" name="activity_id">
+    <% challenges.each do |challenge| %>
+    <option value="<%= challenge.id %>"><%= challenge.title %></option>
+    <% end %>
+  </select>
+  <select name="user_id">
+    <% players.each do |player| %>
+    <option value="<%= player.id %>"><%= player.firstname %></option>
+    <% end %>
+  </select>
+
+  <input name="value" type="number" placeholder="# of points">
+  <input class="pure-button" type="submit" value="record">
+
+</form>

@@ -1,0 +1,11 @@
+<%= erb :'users/_user_profile' %>
+<section>
+  <h2>my challenges</h2>
+    <% @challenges.each do |challenge| %>
+      <%= erb :'users/players/_player_score', locals: { challenge: challenge, score: current_user.player_stat(challenge) } %>
+    <% end %>
+</section>
+<aside>
+  <h2>challenges</h2>
+  <!-- challenges in the future and ones that are overdue(with some kind of indicator that they are past due - turn red with jquery) -->
+</aside>

@@ -1,0 +1,5 @@
+<ul id="scoreboard-listing">
+    <% players.sort_by{|x| x.total_score}.reverse.each do |player| %>
+      <li><a href= '#'><%= player.firstname %></a> | <span id="player_score<%= player.id %>"><%= player.total_score %></span></li>
+    <% end %>
+  </ul>

@@ -1,0 +1,42 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+     Set your content font stack here:
+    font-family: Georgia, Times, "Times New Roman", serif;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, .pure-g [class *= "pure-u"], nav {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+
+h4 {
+  margin-bottom: -6px;
+}
+
+article {
+  background-color: #f6f6f6;
+  padding: 0px 4px 10px 4px;
+  margin: 2px;
+}
+
+ul {
+  list-style-type: none;
+
+}
+
+li {
+  text-decoration: none;
+}
+
+#challenge_list  form {
+  display: none;
+}
+
+.top {
+  margin: 20px;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+}
